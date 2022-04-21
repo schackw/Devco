@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.devco.certification.bookingmanual.runners.FindaPlaceToStay" tests="0" skipped="0" failures="0" errors="0" timestamp="1970-01-01T00:00:00" hostname="DESKTOP-ABPMGTP" time="0.0">
+  <properties/>
+  <system-out><![CDATA[Feature from file:///C:/Users/ADMIN/IdeaProjects/Devco_Test/Devco_Manual/src/test/resources/Features/find_a_place_to_stay.feature
+
+?[33mUndefined scenarios:?[0m
+?[33mfile:///C:/Users/ADMIN/IdeaProjects/Devco_Test/Devco_Manual/src/test/resources/Features/find_a_place_to_stay.feature:5?[0m# Validate that you can select a room if the accommodation is available.
+?[33mfile:///C:/Users/ADMIN/IdeaProjects/Devco_Test/Devco_Manual/src/test/resources/Features/find_a_place_to_stay.feature:12?[0m# validate that the user can not continue, if he does not fill in the fields
+?[33mfile:///C:/Users/ADMIN/IdeaProjects/Devco_Test/Devco_Manual/src/test/resources/Features/find_a_place_to_stay.feature:19?[0m# validate that the user can not continue, if he just fill the name field
+?[33mfile:///C:/Users/ADMIN/IdeaProjects/Devco_Test/Devco_Manual/src/test/resources/Features/find_a_place_to_stay.feature:26?[0m# validate that the user can not continue, if he just fill the lastname field
+?[33mfile:///C:/Users/ADMIN/IdeaProjects/Devco_Test/Devco_Manual/src/test/resources/Features/find_a_place_to_stay.feature:33?[0m# validate that the user can not continue, if he not fill the email field
+?[33mfile:///C:/Users/ADMIN/IdeaProjects/Devco_Test/Devco_Manual/src/test/resources/Features/find_a_place_to_stay.feature:40?[0m# validate that the user can not continue, if he fill the email field with a incorrect domain
+?[33mfile:///C:/Users/ADMIN/IdeaProjects/Devco_Test/Devco_Manual/src/test/resources/Features/find_a_place_to_stay.feature:47?[0m# validate that the user can  continue, if he fill the fields correctly
+?[33mfile:///C:/Users/ADMIN/IdeaProjects/Devco_Test/Devco_Manual/src/test/resources/Features/find_a_place_to_stay.feature:54?[0m# validate that the user can not   continue, if he dont fill the mobile number field
+?[33mfile:///C:/Users/ADMIN/IdeaProjects/Devco_Test/Devco_Manual/src/test/resources/Features/find_a_place_to_stay.feature:61?[0m# validate that the user can not enter alphanumeric values into mobile number field
+?[33mfile:///C:/Users/ADMIN/IdeaProjects/Devco_Test/Devco_Manual/src/test/resources/Features/find_a_place_to_stay.feature:68?[0m# validate that the user can  enter the number into mobile number field
+?[33mfile:///C:/Users/ADMIN/IdeaProjects/Devco_Test/Devco_Manual/src/test/resources/Features/find_a_place_to_stay.feature:76?[0m# validate that the user can not enter alphanumeric values into number card field
+?[33mfile:///C:/Users/ADMIN/IdeaProjects/Devco_Test/Devco_Manual/src/test/resources/Features/find_a_place_to_stay.feature:84?[0m# validate that the user can select the card SCOTIBANK
+?[33mfile:///C:/Users/ADMIN/IdeaProjects/Devco_Test/Devco_Manual/src/test/resources/Features/find_a_place_to_stay.feature:91?[0m# validate that the user can not continue, if he select the bottom completa la reserva with empty fields in the payment section
+?[33mfile:///C:/Users/ADMIN/IdeaProjects/Devco_Test/Devco_Manual/src/test/resources/Features/find_a_place_to_stay.feature:98?[0m# validate that the user can not  type more than 3 characters into CVC code
+
+14 Scenarios (?[33m14 undefined?[0m)
+42 Steps (?[33m42 undefined?[0m)
+0m0,520s
+
+
+You can implement missing steps with the snippets below:
+
+@Given("that the user selects the date of accommodation")
+public void thatTheUserSelectsTheDateOfAccommodation() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+@When("The user select hotel and select the number of rooms")
+public void theUserSelectHotelAndSelectTheNumberOfRooms() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+@Then("The user can see the number selected one")
+public void theUserCanSeeTheNumberSelectedOne() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+@Given("that the user be in the section your data")
+public void thatTheUserBeInTheSectionYourData() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+@When("The user select the bottom siguiente ultimos pasos with the empty fields")
+public void theUserSelectTheBottomSiguienteUltimosPasosWithTheEmptyFields() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+@Then("The user should be see a message error about the empty fields")
+public void theUserShouldBeSeeAMessageErrorAboutTheEmptyFields() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+@When("The user fill the name field and select the bottom siguiente ultimos pasos")
+public void theUserFillTheNameFieldAndSelectTheBottomSiguienteUltimosPasos() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+@Then("The user should be see a message error about the anothers fields")
+public void theUserShouldBeSeeAMessageErrorAboutTheAnothersFields() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+@When("The user fill the lastname field and select the bottom siguiente ultimos pasos")
+public void theUserFillTheLastnameFieldAndSelectTheBottomSiguienteUltimosPasos() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+@When("The user fill the fields except the email field and select the bottom siguiente ultimos pasos")
+public void theUserFillTheFieldsExceptTheEmailFieldAndSelectTheBottomSiguienteUltimosPasos() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+@Then("The user should be see a message error about the email field")
+public void theUserShouldBeSeeAMessageErrorAboutTheEmailField() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+@When("The user fill the email fields with a incorrect domain and select the bottom siguiente ultimos pasos")
+public void theUserFillTheEmailFieldsWithAIncorrectDomainAndSelectTheBottomSiguienteUltimosPasos() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+@Then("The user should be see a message error about the email")
+public void theUserShouldBeSeeAMessageErrorAboutTheEmail() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+@When("The user fill the fields and select the bottom and select the bottom siguiente ultimos pasos")
+public void theUserFillTheFieldsAndSelectTheBottomAndSelectTheBottomSiguienteUltimosPasos() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+@Then("The user should be in the other section")
+public void theUserShouldBeInTheOtherSection() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+@Given("that the user be in the section last step")
+public void thatTheUserBeInTheSectionLastStep() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+@When("The user dont fill the mobile number field")
+public void theUserDontFillTheMobileNumberField() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+@Then("The user should be see a message error about the mobile number")
+public void theUserShouldBeSeeAMessageErrorAboutTheMobileNumber() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+@When("The user Enter letters into mobile number field")
+public void theUserEnterLettersIntoMobileNumberField() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+@Then("The user should be see the mobile number field empty")
+public void theUserShouldBeSeeTheMobileNumberFieldEmpty() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+@When("The user Enter the number into mobile number field")
+public void theUserEnterTheNumberIntoMobileNumberField() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+@Then("The user should be see the number into mobile number field")
+public void theUserShouldBeSeeTheNumberIntoMobileNumberField() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+@When("The user Enter letters into number card field")
+public void theUserEnterLettersIntoNumberCardField() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+@Given("that the user be in the payment section")
+public void thatTheUserBeInThePaymentSection() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+@When("The user select the the card SCOTIBAN")
+public void theUserSelectTheTheCardSCOTIBAN() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+@Then("The user should be see the error about the card selected")
+public void theUserShouldBeSeeTheErrorAboutTheCardSelected() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+@When("The user select the bottom completa la reserva with empty fields in the payment section")
+public void theUserSelectTheBottomCompletaLaReservaWithEmptyFieldsInThePaymentSection() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+@Then("The user should be see the error about the payment section")
+public void theUserShouldBeSeeTheErrorAboutThePaymentSection() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+@When("The user type more than {int} characters into CVC code")
+public void theUserTypeMoreThanCharactersIntoCVCCode(Integer int1) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+@Then("The user should be see the error about the CVC Code")
+public void theUserShouldBeSeeTheErrorAboutTheCVCCode() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+]]></system-out>
+  <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+]]></system-err>
+</testsuite>

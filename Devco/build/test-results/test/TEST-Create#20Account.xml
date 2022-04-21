@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Create Account" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-04-21T00:50:26" hostname="DESKTOP-ABPMGTP" time="38.893">
+  <properties/>
+  <testcase name="Select the bottom Hazte una cuenta" classname="Create Account" time="7.461"/>
+  <testcase name="Select the bottom Continuar con e-mail with the email field empty" classname="Create Account" time="6.28"/>
+  <testcase name="Select the bottom Continuar con e-mail with the email field and  select the bottom Create an account the password fields empty" classname="Create Account" time="7.953"/>
+  <testcase name="Incorrectly fill in the passwords fields" classname="Create Account" time="8.752"/>
+  <testcase name="Incorrectly fill in the passwords fields" classname="Create Account" time="8.447"/>
+  <system-out><![CDATA[Feature from file:///C:/Users/ADMIN/IdeaProjects/IDevco_Test/Devco/src/test/resources/features/create_account.feature
+Feature from file:///C:/Users/ADMIN/IdeaProjects/IDevco_Test/Devco/src/test/resources/features/create_account.feature
+Feature from file:///C:/Users/ADMIN/IdeaProjects/IDevco_Test/Devco/src/test/resources/features/create_account.feature
+Feature from file:///C:/Users/ADMIN/IdeaProjects/IDevco_Test/Devco/src/test/resources/features/create_account.feature
+Step argument class io.cucumber.core.gherkin.vintage.GherkinVintageDataTableArgument
+Feature from file:///C:/Users/ADMIN/IdeaProjects/IDevco_Test/Devco/src/test/resources/features/create_account.feature
+Step argument class io.cucumber.core.gherkin.vintage.GherkinVintageDataTableArgument
+]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 99.0.4844.51 (d537ec02474b5afe23684e7963d538896c63ac77-refs/branch-heads/4844@{#875}) on port 26472
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+[1650502229.055][WARNING]: This version of ChromeDriver has not been tested with Chrome version 100.
+abr. 20, 2022 7:50:29 P. M. org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+Starting ChromeDriver 99.0.4844.51 (d537ec02474b5afe23684e7963d538896c63ac77-refs/branch-heads/4844@{#875}) on port 28187
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+[1650502235.285][WARNING]: This version of ChromeDriver has not been tested with Chrome version 100.
+abr. 20, 2022 7:50:35 P. M. org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+Starting ChromeDriver 99.0.4844.51 (d537ec02474b5afe23684e7963d538896c63ac77-refs/branch-heads/4844@{#875}) on port 44918
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+[1650502241.489][WARNING]: This version of ChromeDriver has not been tested with Chrome version 100.
+abr. 20, 2022 7:50:41 P. M. org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+Starting ChromeDriver 99.0.4844.51 (d537ec02474b5afe23684e7963d538896c63ac77-refs/branch-heads/4844@{#875}) on port 46117
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+[1650502249.515][WARNING]: This version of ChromeDriver has not been tested with Chrome version 100.
+abr. 20, 2022 7:50:49 P. M. org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+Starting ChromeDriver 99.0.4844.51 (d537ec02474b5afe23684e7963d538896c63ac77-refs/branch-heads/4844@{#875}) on port 29859
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+[1650502258.364][WARNING]: This version of ChromeDriver has not been tested with Chrome version 100.
+abr. 20, 2022 7:50:58 P. M. org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+</testsuite>

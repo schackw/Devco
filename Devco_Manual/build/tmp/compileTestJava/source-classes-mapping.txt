@@ -1,0 +1,6 @@
+co/com/devco/certification/bookingmanual/runners/CreateAccount.java
+ co.com.devco.certification.bookingmanual.runners.CreateAccount
+co/com/devco/certification/bookingmanual/stepdefinitions/BookingManualStepDefinitions.java
+ co.com.devco.certification.bookingmanual.stepdefinitions.BookingManualStepDefinitions
+co/com/devco/certification/bookingmanual/runners/FindaPlaceToStay.java
+ co.com.devco.certification.bookingmanual.runners.FindaPlaceToStay
