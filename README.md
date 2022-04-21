@@ -1,7 +1,10 @@
 En este readme , se dara la explicación basica del proyecto y su propia ejeccuccion
 
-Para poder ejecutar el proyecto se deberá clonar el repositorio de la url:
+Para poder ejecutar el proyecto se deberá clonar el repositorio de la url:https://github.com/schackw/Devco
 Luego de clonar , deberas ver dos carpetas una con el nombre devco y otra con el nombre devco_manual
+
+O puedes visualizar el repositorio en Azure devops en el siguiente link :https://dev.azure.com/jonathanafan98/Devco/_git/IDevco_Test  , para esto
+debes tener creado una cuenta en azure devops, aqui podras ver elrepositorio y sus correspondientes pipelines de CI/CD y su pipeline de release M.
 
 En la carpeta de Devco_manual se encuentran los casos de pruebas manuales
 
