@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Features</title>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.20/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.20/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.20/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.20/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.20/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- JQuery-UI -->
+<link type="text/css" href="jqueryui/1.11.2-start/jquery-ui.min.css" rel="Stylesheet" />
+<script type="text/javascript" src="jqueryui/1.11.2-start/jquery-ui.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.20/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.20/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.20/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.20/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.20/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            var scenarioTable = $('.scenario-result-table').DataTable({
+
+                "order": [],
+                "language": {
+                    searchPlaceholder: "Filter",
+                    search: ""
+                }
+            });
+
+            $('.example-table table').DataTable({
+                searching: false,
+                ordering: false,
+                paging: false,
+                info: false
+            });
+
+            $('.example-table-in-scenario table').DataTable({
+                searching: false,
+                ordering: false,
+                paging: false,
+                info: false
+            });
+
+            $('#evidence-table').DataTable(
+                    {
+                        searching: false,
+                        ordering: false,
+                        paging: false,
+                        info: false
+                    }
+            );
+
+
+            $(".scenario-docs .card-body table").wrap("<div class='table-responsive'></div>");
+
+            $("#requirements-tabs").tabs();
+            $("#test-tabs").tabs();
+
+            var requirementsTree = [{"text":"I as a user require to make a reservation from the Stays tab.","type":"feature","href":"6e3046b2afb103b0f057fafbdaf08fbdc8d4926dfd6d76ef84cfbe388e4cc931.html","nodes":[],"selectable":false,"tags":["","\u003cspan class\u003d\u0027feature-count\u0027\u003e14 scenarios\u003c/span\u003e"]}];
+
+            $('#tree').treeview({
+                data: requirementsTree,
+                enableLinks: true,
+                showTags: true,
+                expandIcon: "glyphicon glyphicon-folder-close",
+                collapseIcon: "glyphicon glyphicon-folder-open",
+                emptyIcon: "glyphicon glyphicon-book"
+            });
+
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $(".scenario-docs > div > p").html(function () {
+                var text = $(this).text().trim().split(" ");
+                var first = text.shift();
+                return (text.length > 0 ? "<strong>" + first + "</strong> " : first) + text.join(" ");
+            });
+        });
+    </script>
+</head>
+
+<body class="results-page">
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle"></span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+            <a href='index.html'>Home</a> > <a href="capabilities.html">Requirements</a>
+
+
+
+                > <span class="truncate-40">I As A User Require To Make A Reservation From The Stays Tab.</span>
+
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li >
+            <a href="index.html"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li class="active">
+            <a href="#"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 20-04-2022 11:29</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+    <div id="beforetable"></div>
+    <div id="results-dashboard">
+        <div class="table">
+                <div class=row">
+                    <div class="col-sm-12">
+                        <div>
+                            <div clas="table">
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                    <span>
+                                            <h2><i class="fa fa-book"></i> Feature:  I As A User Require To Make A Reservation From The Stays Tab.</h2>
+                                        </span>
+                                </div>
+                                    <div class="col-sm-4">
+                                        <span class="feature-tags">
+                                                <p class="tag">
+                                                    <span class="badge tag-badge" style="background:default;">
+                                                        <i class="fa fa-tag"></i>&nbsp;<a class="tagLink"
+                                                                                          style="background:default;"
+                                                                                          href="9a26bd101adfda745f743db04eb3269922eb1ff4d86d9997efeca1ebfe995ac4.html">Manual
+                                                        (tag)</a>
+                                                    </span>
+                                                </p>
+                                        </span>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="requirementNarrativeTitle">
+                                
+                            </div>
+
+                        </div>
+                    </div>
+
+
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <!-- Requirements result tabs -->
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-toggle="tab" href="#specs"><i class="fas fa-comments"></i> Specifications</a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#results"><i class="fas fa-tachometer-alt"></i> Test Results</a>
+                        </li>
+                    </ul>
+
+                    <!-- Specifications and Results tabs -->
+                    <div class="card border">
+                        <div class="tab-content" id="pills-tabContent">
+                            <div id="specs" class="tab-pane fade in active">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+
+
+                                            <h3>Scenarios</h3>
+
+                                            <div id="toc">
+                                                <table class="table" id="toc-table">
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#b744003408a8f11e02720bcc4d4ad8fc7e6823923e3e5dc41ae6059e03c4f894" title="View scenario details" >Validate that you can select a room if the accommodation is available.</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="8ab9d899629b2e0aa2bf5b6a585021d54fea7f800a94ba8aa421b392aa55c438.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                         <i class="fa fa-user manual"
+                                                                                           title="Manual test"></i>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="8ab9d899629b2e0aa2bf5b6a585021d54fea7f800a94ba8aa421b392aa55c438.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#1781806c91a6813c32efd4f3c78d3513de5c29585d1f5eff6a23fc7b22144743" title="View scenario details" >Validate that the user can not continue, if he does not fill in the fields</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="651eb940c6a6b8b782e80bd3e5760eaa72f7994b2d8f9464153add1875e46c8e.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                         <i class="fa fa-user manual"
+                                                                                           title="Manual test"></i>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="651eb940c6a6b8b782e80bd3e5760eaa72f7994b2d8f9464153add1875e46c8e.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#fe02302d0b0a58de47167ab2e28cbf6b24018a0fde4bc03cfccebb6f8e4a1bcb" title="View scenario details" >Validate that the user can not continue, if he just fill the name field</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="23f58558cc79376a8cdd463c0a1c4498f14da9c4622df67ce00e98860cb77dd6.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                         <i class="fa fa-user manual"
+                                                                                           title="Manual test"></i>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="23f58558cc79376a8cdd463c0a1c4498f14da9c4622df67ce00e98860cb77dd6.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#a2005b42d812a15ec5ec6936871793980b9f7de695cd713cda2d488deb0b8e96" title="View scenario details" >Validate that the user can not continue, if he just fill the lastname field</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="6873095e6ebf7b8983b55a671d6fc7faf07a58039f52c6b6ee3599388cb9d789.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                         <i class="fa fa-user manual"
+                                                                                           title="Manual test"></i>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="6873095e6ebf7b8983b55a671d6fc7faf07a58039f52c6b6ee3599388cb9d789.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#90510c7c55bec7865cee2abbf642244dbd079faf4923402553a73fc4763f8a13" title="View scenario details" >Validate that the user can not continue, if he not fill the email field</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="5cd3102226bd2663b3bd90719f538dc7abab88cfa2b8ce0b2544e82e8fe3b204.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                         <i class="fa fa-user manual"
+                                                                                           title="Manual test"></i>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="5cd3102226bd2663b3bd90719f538dc7abab88cfa2b8ce0b2544e82e8fe3b204.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#af869c4ccd60e724cca21e2d1a2f1b5576283854ba0407c0dc32ecb9c113535b" title="View scenario details" >Validate that the user can not continue, if he fill the email field with a incorrect domain</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="fb707e01e34cb9bce20f8a5d02b2512e9b0bd0767b9d8cabbca5e250ca8fbbf0.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                         <i class="fa fa-user manual"
+                                                                                           title="Manual test"></i>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="fb707e01e34cb9bce20f8a5d02b2512e9b0bd0767b9d8cabbca5e250ca8fbbf0.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#9944453cddac1679c491627d80de0a27c82125320652d60462e4ba167dbdc5ba" title="View scenario details" >Validate that the user can  continue, if he fill the fields correctly</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="a370b46dca06add3f4b89aef69185180ee41f288aa9c71f2f083d06c4f9ec535.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                         <i class="fa fa-user manual"
+                                                                                           title="Manual test"></i>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="a370b46dca06add3f4b89aef69185180ee41f288aa9c71f2f083d06c4f9ec535.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#b0fa9a6b7bf8ebe90f875904040cc3020194f9232b9cace2aa8b0fa3c46490c7" title="View scenario details" >Validate that the user can not   continue, if he dont fill the mobile number field</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="1f45fee87e7a87b9c4fbad4e074a1ca4e57a72efdce88bbcc1283ff7c27c6715.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                         <i class="fa fa-user manual"
+                                                                                           title="Manual test"></i>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="1f45fee87e7a87b9c4fbad4e074a1ca4e57a72efdce88bbcc1283ff7c27c6715.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#8dd62ec0d3462bfdfc3d0cd779def9f260273654d05e315120e282d79e2b1a31" title="View scenario details" >Validate that the user can not enter alphanumeric values into mobile number field</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="aca044bbc6bcd4a19592aac3b1e800e402def8aeefb244be1b16f004fb943845.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                         <i class="fa fa-user manual"
+                                                                                           title="Manual test"></i>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="aca044bbc6bcd4a19592aac3b1e800e402def8aeefb244be1b16f004fb943845.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#d04d8c09a9ca7403454144e6adb56c99880907a9015ba72607f4db17b434b9e7" title="View scenario details" >Validate that the user can  enter the number into mobile number field</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="f4c1794721caec86488dffe683973be409d55e757703edc48b19cb5de3aa7563.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                         <i class="fa fa-user manual"
+                                                                                           title="Manual test"></i>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="f4c1794721caec86488dffe683973be409d55e757703edc48b19cb5de3aa7563.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#5a42771fbf6dd2f9a09820d394deed08d7881d4fbcdc55417545d35040a5547d" title="View scenario details" >Validate that the user can not enter alphanumeric values into number card field</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="25306ee8f2bcc588184cf0bf7c914b299f215d9bebeeefe9ddbbcae0c760ae9d.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                         <i class="fa fa-user manual"
+                                                                                           title="Manual test"></i>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="25306ee8f2bcc588184cf0bf7c914b299f215d9bebeeefe9ddbbcae0c760ae9d.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#d7e19f1cad5b894acffd34526ba5125e080f3dfc0e7f49c01ef820559e979d9c" title="View scenario details" >Validate that the user can select the card SCOTIBANK</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="036eb4fe3c3da9c06d725c1443a48c494906eba6d186c0c62fe8bac9699e025b.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></a>
+                                                                            </a>
+
+                                                                         <i class="fa fa-user manual"
+                                                                                           title="Manual test"></i>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="036eb4fe3c3da9c06d725c1443a48c494906eba6d186c0c62fe8bac9699e025b.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#a3d09d50183f37b1dcd5ae24cdc5ab87cb137bb230245b1c5c718f9b6c72b837" title="View scenario details" >Validate that the user can not continue, if he select the bottom completa la reserva with empty fields in the payment section</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="6bb4bfa43a09337aa88d9ffb69adb4b311b05f357e06eebff8d492cbcc7442e0.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                         <i class="fa fa-user manual"
+                                                                                           title="Manual test"></i>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="6bb4bfa43a09337aa88d9ffb69adb4b311b05f357e06eebff8d492cbcc7442e0.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#6a2e309d8ab767ce7f8097d040f2bc125922815320a2bc6c03b988c4f2bc6f3c" title="View scenario details" >Validate that the user can not  type more than 3 characters into CVC code</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="511679285616d7a5c72f7a66c3fa7c3106e567e31ab804e3f4af6cfb7c2239c7.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                         <i class="fa fa-user manual"
+                                                                                           title="Manual test"></i>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="511679285616d7a5c72f7a66c3fa7c3106e567e31ab804e3f4af6cfb7c2239c7.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                </table>
+
+                                            </div>
+
+                                            <h3>Scenario details</h3>
+
+                                                <div class="scenario-docs card" id="b744003408a8f11e02720bcc4d4ad8fc7e6823923e3e5dc41ae6059e03c4f894">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="8ab9d899629b2e0aa2bf5b6a585021d54fea7f800a94ba8aa421b392aa55c438.html" title="View test results">Validate that you can select a room if the accommodation is available.</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                 <i class="fa fa-user manual" title="Manual test"></i>
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given that the user selects the date of accommodation</p>
+                                                            <p>When The user select hotel and select the number of rooms</p>
+                                                            <p>Then The user can see the number selected one</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="1781806c91a6813c32efd4f3c78d3513de5c29585d1f5eff6a23fc7b22144743">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="651eb940c6a6b8b782e80bd3e5760eaa72f7994b2d8f9464153add1875e46c8e.html" title="View test results">validate that the user can not continue, if he does not fill in the fields</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                 <i class="fa fa-user manual" title="Manual test"></i>
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given that the user be in the section your data</p>
+                                                            <p>When The user select the bottom siguiente ultimos pasos with the empty fields</p>
+                                                            <p>Then The user should be see a message error about the empty fields</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="fe02302d0b0a58de47167ab2e28cbf6b24018a0fde4bc03cfccebb6f8e4a1bcb">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="23f58558cc79376a8cdd463c0a1c4498f14da9c4622df67ce00e98860cb77dd6.html" title="View test results">validate that the user can not continue, if he just fill the name field</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                 <i class="fa fa-user manual" title="Manual test"></i>
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given that the user be in the section your data</p>
+                                                            <p>When The user fill the name field and select the bottom siguiente ultimos pasos</p>
+                                                            <p>Then The user should be see a message error about the anothers fields</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="a2005b42d812a15ec5ec6936871793980b9f7de695cd713cda2d488deb0b8e96">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="6873095e6ebf7b8983b55a671d6fc7faf07a58039f52c6b6ee3599388cb9d789.html" title="View test results">validate that the user can not continue, if he just fill the lastname field</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                 <i class="fa fa-user manual" title="Manual test"></i>
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given that the user be in the section your data</p>
+                                                            <p>When The user fill the lastname field and select the bottom siguiente ultimos pasos</p>
+                                                            <p>Then The user should be see a message error about the anothers fields</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="90510c7c55bec7865cee2abbf642244dbd079faf4923402553a73fc4763f8a13">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="5cd3102226bd2663b3bd90719f538dc7abab88cfa2b8ce0b2544e82e8fe3b204.html" title="View test results">validate that the user can not continue, if he not fill the email field</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                 <i class="fa fa-user manual" title="Manual test"></i>
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given that the user be in the section your data</p>
+                                                            <p>When The user fill the fields except the email field and select the bottom siguiente ultimos pasos</p>
+                                                            <p>Then The user should be see a message error about the email field</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="af869c4ccd60e724cca21e2d1a2f1b5576283854ba0407c0dc32ecb9c113535b">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="fb707e01e34cb9bce20f8a5d02b2512e9b0bd0767b9d8cabbca5e250ca8fbbf0.html" title="View test results">validate that the user can not continue, if he fill the email field with a incorrect domain</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                 <i class="fa fa-user manual" title="Manual test"></i>
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given that the user be in the section your data</p>
+                                                            <p>When The user fill the email fields with a incorrect domain and select the bottom siguiente ultimos pasos</p>
+                                                            <p>Then The user should be see a message error about the email</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="9944453cddac1679c491627d80de0a27c82125320652d60462e4ba167dbdc5ba">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="a370b46dca06add3f4b89aef69185180ee41f288aa9c71f2f083d06c4f9ec535.html" title="View test results">validate that the user can  continue, if he fill the fields correctly</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                 <i class="fa fa-user manual" title="Manual test"></i>
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given that the user be in the section your data</p>
+                                                            <p>When The user fill the fields and select the bottom and select the bottom siguiente ultimos pasos</p>
+                                                            <p>Then The user should be in the other section</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="b0fa9a6b7bf8ebe90f875904040cc3020194f9232b9cace2aa8b0fa3c46490c7">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="1f45fee87e7a87b9c4fbad4e074a1ca4e57a72efdce88bbcc1283ff7c27c6715.html" title="View test results">validate that the user can not   continue, if he dont fill the mobile number field</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                 <i class="fa fa-user manual" title="Manual test"></i>
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given that the user be in the section last step</p>
+                                                            <p>When The user dont fill the mobile number field</p>
+                                                            <p>Then The user should be see a message error about the mobile number</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="8dd62ec0d3462bfdfc3d0cd779def9f260273654d05e315120e282d79e2b1a31">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="aca044bbc6bcd4a19592aac3b1e800e402def8aeefb244be1b16f004fb943845.html" title="View test results">validate that the user can not enter alphanumeric values into mobile number field</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                 <i class="fa fa-user manual" title="Manual test"></i>
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given that the user be in the section last step</p>
+                                                            <p>When The user Enter letters into mobile number field</p>
+                                                            <p>Then The user should be see the mobile number field empty</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="d04d8c09a9ca7403454144e6adb56c99880907a9015ba72607f4db17b434b9e7">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="f4c1794721caec86488dffe683973be409d55e757703edc48b19cb5de3aa7563.html" title="View test results">validate that the user can  enter the number into mobile number field</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                 <i class="fa fa-user manual" title="Manual test"></i>
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given that the user be in the section last step</p>
+                                                            <p>When The user Enter the number into mobile number field</p>
+                                                            <p>Then The user should be see the number into mobile number field</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="5a42771fbf6dd2f9a09820d394deed08d7881d4fbcdc55417545d35040a5547d">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="25306ee8f2bcc588184cf0bf7c914b299f215d9bebeeefe9ddbbcae0c760ae9d.html" title="View test results">validate that the user can not enter alphanumeric values into number card field</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                 <i class="fa fa-user manual" title="Manual test"></i>
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given that the user be in the section last step</p>
+                                                            <p>When The user Enter letters into number card field</p>
+                                                            <p>Then The user should be see the mobile number field empty</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="d7e19f1cad5b894acffd34526ba5125e080f3dfc0e7f49c01ef820559e979d9c">
+                                                    <div class="scenario-docs card-header failure" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="036eb4fe3c3da9c06d725c1443a48c494906eba6d186c0c62fe8bac9699e025b.html" title="View test results">validate that the user can select the card SCOTIBANK</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                 <i class="fa fa-user manual" title="Manual test"></i>
+
+                                                                    <a href='##beforetable'><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given that the user be in the payment section</p>
+                                                            <p>When The user select the the card SCOTIBAN</p>
+                                                            <p>Then The user should be see the error about the card selected</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="a3d09d50183f37b1dcd5ae24cdc5ab87cb137bb230245b1c5c718f9b6c72b837">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="6bb4bfa43a09337aa88d9ffb69adb4b311b05f357e06eebff8d492cbcc7442e0.html" title="View test results">validate that the user can not continue, if he select the bottom completa la reserva with empty fields in the payment section</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                 <i class="fa fa-user manual" title="Manual test"></i>
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given that the user be in the payment section</p>
+                                                            <p>When The user select the bottom completa la reserva with empty fields in the payment section</p>
+                                                            <p>Then The user should be see the error about the payment section</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="6a2e309d8ab767ce7f8097d040f2bc125922815320a2bc6c03b988c4f2bc6f3c">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="511679285616d7a5c72f7a66c3fa7c3106e567e31ab804e3f4af6cfb7c2239c7.html" title="View test results">validate that the user can not  type more than 3 characters into CVC code</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                 <i class="fa fa-user manual" title="Manual test"></i>
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given that the user be in the payment section</p>
+                                                            <p>When The user type more than 3 characters into CVC code</p>
+                                                            <p>Then The user should be see the error about the CVC Code</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="results" class="tab-pane fade">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+
+                                            <div style="width:300px;" class="chart-container automated-and-manual-results">
+                                                <div class="ct-chart ct-square"></div>
+                                            </div>
+                                            <script>
+
+                                                var labels = [' ', '93%', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '7%', ' ', ' ', ' ', ' '];
+                                                // Our series array that contains series objects or in this case series data arrays
+
+                                                var series = [{meta: 'Passing tests (automated)', value: 0}, {meta: 'Passing tests (manual)', value: 13}, {meta: 'Pending tests (automated)', value: 0}, {meta: 'Pending tests (manual)', value: 0}, {meta: 'Ignored tests (automated)', value: 0}, {meta: 'Ignored tests (manual)', value: 0}, {meta: 'Skipped tests (automated)', value: 0}, {meta: 'Skipped tests (manual)', value: 0}, {meta: 'Failing tests (automated)', value: 0}, {meta: 'Failing tests (manual)', value: 1}, {meta: 'Broken tests (automated)', value: 0}, {meta: 'Broken tests (manual)', value: 0}, {meta: 'Compromised tests (automated)', value: 0}, {meta: 'Compromised tests (manual)', value: 0}];
+
+                                                // As options we currently only set a static size of 300x200 px. We can also omit this and use aspect ratio containers
+                                                // as you saw in the previous example
+                                                var options = {
+                                                    width: 350,
+                                                    height: 300
+                                                };
+
+                                                $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                                                    new Chartist.Pie('.ct-chart', {
+                                                        series: series,
+                                                        labels: labels,
+                                                    }, {
+                                                        donut: true,
+                                                        donutWidth: 60,
+                                                        donutSolid: true,
+                                                        startAngle: 270,
+                                                        showLabel: true
+                                                    }, options);
+                                                });
+
+                                            </script>
+                                        </div>
+                                        <div class="col-sm-8">
+
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                                <th scope="col">Scenario Results (including rows of test data)</th>
+                                                <th scope="col" colspan="2" class="automated-stats">
+                                                    Automated
+                                                </th>
+                                                        <th scope="col" colspan="2" class="manual-stats"> Manual</th>
+                                                        <th scope="col" colspan="2" class="total-stats"> Total</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                                    <td class="aggregate-result-count">
+                                                                        <a href="22540e6bac71812301c4e8ad2c3b40c5db328ff741b9eec7347a20a905c3dd08.html"><i
+                                                                                class='fa fa-check-circle-o success-icon'></i>&nbsp;Passing</a>
+                                                                    </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                                                <td class="manual-stats">13</td>
+                                                                <td class="manual-stats">93%</td>
+                                                                <td class="total-stats">13</td>
+                                                                <td class="total-stats">93%</td>
+                                            </tr>
+                                            <tr>
+                                                                    <td class="aggregate-result-count"><i
+                                                                            class='fa fa-stop-circle-o pending-icon'></i>&nbsp;Pending
+                                                                    </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                                                <td class="manual-stats">0</td>
+                                                                <td class="manual-stats"> </td>
+                                                                <td class="total-stats">0</td>
+                                                                <td class="total-stats"> </td>
+                                            </tr>
+                                            <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                        class='fa fa-ban ignored-icon'></i>&nbsp;Ignored
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                                                <td class="manual-stats">0</td>
+                                                                <td class="manual-stats"> </td>
+                                                                <td class="total-stats">0</td>
+                                                                <td class="total-stats"> </td>
+                                            </tr>
+                                            <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                        class='fa fa-fast-forward skip-icon'></i>&nbsp;Skipped
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                                                <td class="manual-stats">0</td>
+                                                                <td class="manual-stats"> </td>
+                                                                <td class="total-stats">0</td>
+                                                                <td class="total-stats"> </td>
+                                            </tr>
+                                            <tr>
+                                                                           <td colspan="7"><a href="ec9e040e242f4f950d093e706deec5fcb40a9b97a579ead1e2e51fbf5e3317c6.html"><i
+                                                                                   class='fa fa-times failure-icon'></i>&nbsp;<em>Unsuccessful</em></a>
+                                                                           </td>
+
+                                            </tr>
+
+                                            <tr>
+                                                                    <td class="aggregate-result-count indented-error-category">
+                                                                        <a href="2e7845546532df05b862669421c8eb1c723fdde5e3916be30059b4be6179fa5b.html"><i
+                                                                                class='fa fa-times-circle failure-icon'></i>&nbsp;Failed</a>
+                                                                    </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                                                <td class="manual-stats">1</td>
+                                                                <td class="manual-stats">7%</td>
+                                                                <td class="total-stats">1</td>
+                                                                <td class="total-stats">7%</td>
+                                            <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='fa fa-exclamation-triangle error-icon'></i>&nbsp;Broken
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                                                <td class="manual-stats">0</td>
+                                                                <td class="manual-stats"> </td>
+                                                                <td class="total-stats">0</td>
+                                                                <td class="total-stats"> </td>
+                                            <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='fa fa-chain-broken compromised-icon'></i>&nbsp;Compromised
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                                                <td class="manual-stats">0</td>
+                                                                <td class="manual-stats"> </td>
+                                                                <td class="total-stats">0</td>
+                                                                <td class="total-stats"> </td>
+                                            </tr>
+                                            <tr class="summary-stats">
+                                                <td class="aggregate-result-count">Total</td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"></td>
+                                                            <td class="manual-stats">14</td>
+                                                            <td class="manual-stats"></td>
+                                                            <td class="total-stats">14</td>
+                                                            <td class="total-stats"></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <table class="table">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>Execution Time</th>
+                                                        <th>Clock Time</th>
+                                                        <th>Fastest Test</th>
+                                                        <th>Slowest Test</th>
+                                                        <th>Average Execution Time</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>216ms</td>
+                                                        <td>270ms</td>
+                                                        <td>7ms</td>
+                                                        <td>110ms</td>
+                                                        <td>15ms</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h3><i class="fas fa-cogs"></i> Automated Tests</h3>
+
+                                            No automated tests were executed
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h3><i class="fas fa-edit"></i> Manual Tests</h3>
+
+                                            <table class="scenario-result-table table" id="manual-scenario-results">
+                                                <thead>
+                                                <tr>
+                                                    <th class="test-name-column" style="width:60em;">Scenario</th>
+                                                    <th>Steps</th>
+                                                    <th>Result</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                        <a href="8ab9d899629b2e0aa2bf5b6a585021d54fea7f800a94ba8aa421b392aa55c438.html">Validate that you can select a room if the accommodation is available.</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                        <a href="651eb940c6a6b8b782e80bd3e5760eaa72f7994b2d8f9464153add1875e46c8e.html">validate that the user can not continue, if he does not fill in the fields</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                        <a href="23f58558cc79376a8cdd463c0a1c4498f14da9c4622df67ce00e98860cb77dd6.html">validate that the user can not continue, if he just fill the name field</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                        <a href="6873095e6ebf7b8983b55a671d6fc7faf07a58039f52c6b6ee3599388cb9d789.html">validate that the user can not continue, if he just fill the lastname field</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                        <a href="5cd3102226bd2663b3bd90719f538dc7abab88cfa2b8ce0b2544e82e8fe3b204.html">validate that the user can not continue, if he not fill the email field</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                        <a href="fb707e01e34cb9bce20f8a5d02b2512e9b0bd0767b9d8cabbca5e250ca8fbbf0.html">validate that the user can not continue, if he fill the email field with a incorrect domain</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                        <a href="a370b46dca06add3f4b89aef69185180ee41f288aa9c71f2f083d06c4f9ec535.html">validate that the user can  continue, if he fill the fields correctly</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                        <a href="1f45fee87e7a87b9c4fbad4e074a1ca4e57a72efdce88bbcc1283ff7c27c6715.html">validate that the user can not   continue, if he dont fill the mobile number field</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                        <a href="aca044bbc6bcd4a19592aac3b1e800e402def8aeefb244be1b16f004fb943845.html">validate that the user can not enter alphanumeric values into mobile number field</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                        <a href="f4c1794721caec86488dffe683973be409d55e757703edc48b19cb5de3aa7563.html">validate that the user can  enter the number into mobile number field</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                        <a href="25306ee8f2bcc588184cf0bf7c914b299f215d9bebeeefe9ddbbcae0c760ae9d.html">validate that the user can not enter alphanumeric values into number card field</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result FAILURE">
+                                                    <td>
+                                                        <a href="036eb4fe3c3da9c06d725c1443a48c494906eba6d186c0c62fe8bac9699e025b.html">validate that the user can select the card SCOTIBANK</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></a> <span
+                                                            style="display:none">FAILURE</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                        <a href="6bb4bfa43a09337aa88d9ffb69adb4b311b05f357e06eebff8d492cbcc7442e0.html">validate that the user can not continue, if he select the bottom completa la reserva with empty fields in the payment section</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                        <a href="511679285616d7a5c72f7a66c3fa7c3106e567e31ab804e3f4af6cfb7c2239c7.html">validate that the user can not  type more than 3 characters into CVC code</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <span class="version">Serenity BDD version 2.2.2</span>
+                    </div>
+                </div>
+            </div>
+</body>
+</html>
