@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="I as a user require to make a reservation from the Stays tab." tests="14" skipped="14" failures="0" errors="0" timestamp="2022-04-20T16:29:49" hostname="DESKTOP-ABPMGTP" time="0.341">
+  <properties/>
+  <testcase name="Validate that you can select a room if the accommodation is available." classname="I as a user require to make a reservation from the Stays tab." time="0.191">
+    <skipped/>
+  </testcase>
+  <testcase name="validate that the user can not continue, if he does not fill in the fields" classname="I as a user require to make a reservation from the Stays tab." time="0.018">
+    <skipped/>
+  </testcase>
+  <testcase name="validate that the user can not continue, if he just fill the name field" classname="I as a user require to make a reservation from the Stays tab." time="0.012">
+    <skipped/>
+  </testcase>
+  <testcase name="validate that the user can not continue, if he just fill the lastname field" classname="I as a user require to make a reservation from the Stays tab." time="0.011">
+    <skipped/>
+  </testcase>
+  <testcase name="validate that the user can not continue, if he not fill the email field" classname="I as a user require to make a reservation from the Stays tab." time="0.012">
+    <skipped/>
+  </testcase>
+  <testcase name="validate that the user can not continue, if he fill the email field with a incorrect domain" classname="I as a user require to make a reservation from the Stays tab." time="0.01">
+    <skipped/>
+  </testcase>
+  <testcase name="validate that the user can  continue, if he fill the fields correctly" classname="I as a user require to make a reservation from the Stays tab." time="0.011">
+    <skipped/>
+  </testcase>
+  <testcase name="validate that the user can not   continue, if he dont fill the mobile number field" classname="I as a user require to make a reservation from the Stays tab." time="0.011">
+    <skipped/>
+  </testcase>
+  <testcase name="validate that the user can not enter alphanumeric values into mobile number field" classname="I as a user require to make a reservation from the Stays tab." time="0.01">
+    <skipped/>
+  </testcase>
+  <testcase name="validate that the user can  enter the number into mobile number field" classname="I as a user require to make a reservation from the Stays tab." time="0.011">
+    <skipped/>
+  </testcase>
+  <testcase name="validate that the user can not enter alphanumeric values into number card field" classname="I as a user require to make a reservation from the Stays tab." time="0.01">
+    <skipped/>
+  </testcase>
+  <testcase name="validate that the user can select the card SCOTIBANK" classname="I as a user require to make a reservation from the Stays tab." time="0.011">
+    <skipped/>
+  </testcase>
+  <testcase name="validate that the user can not continue, if he select the bottom completa la reserva with empty fields in the payment section" classname="I as a user require to make a reservation from the Stays tab." time="0.01">
+    <skipped/>
+  </testcase>
+  <testcase name="validate that the user can not  type more than 3 characters into CVC code" classname="I as a user require to make a reservation from the Stays tab." time="0.012">
+    <skipped/>
+  </testcase>
+  <system-out><![CDATA[Feature from file:///C:/Users/ADMIN/IdeaProjects/Devco_Test/Devco_Manual/src/test/resources/Features/find_a_place_to_stay.feature
+Feature from file:///C:/Users/ADMIN/IdeaProjects/Devco_Test/Devco_Manual/src/test/resources/Features/find_a_place_to_stay.feature
+Feature from file:///C:/Users/ADMIN/IdeaProjects/Devco_Test/Devco_Manual/src/test/resources/Features/find_a_place_to_stay.feature
+Feature from file:///C:/Users/ADMIN/IdeaProjects/Devco_Test/Devco_Manual/src/test/resources/Features/find_a_place_to_stay.feature
+Feature from file:///C:/Users/ADMIN/IdeaProjects/Devco_Test/Devco_Manual/src/test/resources/Features/find_a_place_to_stay.feature
+Feature from file:///C:/Users/ADMIN/IdeaProjects/Devco_Test/Devco_Manual/src/test/resources/Features/find_a_place_to_stay.feature
+Feature from file:///C:/Users/ADMIN/IdeaProjects/Devco_Test/Devco_Manual/src/test/resources/Features/find_a_place_to_stay.feature
+Feature from file:///C:/Users/ADMIN/IdeaProjects/Devco_Test/Devco_Manual/src/test/resources/Features/find_a_place_to_stay.feature
+Feature from file:///C:/Users/ADMIN/IdeaProjects/Devco_Test/Devco_Manual/src/test/resources/Features/find_a_place_to_stay.feature
+Feature from file:///C:/Users/ADMIN/IdeaProjects/Devco_Test/Devco_Manual/src/test/resources/Features/find_a_place_to_stay.feature
+Feature from file:///C:/Users/ADMIN/IdeaProjects/Devco_Test/Devco_Manual/src/test/resources/Features/find_a_place_to_stay.feature
+Feature from file:///C:/Users/ADMIN/IdeaProjects/Devco_Test/Devco_Manual/src/test/resources/Features/find_a_place_to_stay.feature
+Feature from file:///C:/Users/ADMIN/IdeaProjects/Devco_Test/Devco_Manual/src/test/resources/Features/find_a_place_to_stay.feature
+Feature from file:///C:/Users/ADMIN/IdeaProjects/Devco_Test/Devco_Manual/src/test/resources/Features/find_a_place_to_stay.feature
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
